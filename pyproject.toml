@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "subzero-benchmark"
+version = "0.1.0"
+description = "Repeatable inference throughput and quantization benchmarks for subtitle translation"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Yuri Barreira" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "subzero-cli",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+subzero-benchmark = "subzero_benchmark.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
